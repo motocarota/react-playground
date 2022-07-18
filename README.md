@@ -1,5 +1,4 @@
 # React playground
----
 
 ## Get started
 ```
