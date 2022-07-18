@@ -7,8 +7,6 @@ function Content(props) {
   const {
     loading, error, data,
   } = useFetch(`users/${id}`);
-  // come mai l'hook non si aggiorna?
-  // vorrei che venisse chiamato ogni volta che id cambia
 
   return (
     <>
