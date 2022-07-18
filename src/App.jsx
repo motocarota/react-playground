@@ -1,40 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Counter from './Components/Counter/Counter'
-import Counter2 from './Components/Counter2/Counter2'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import Content from './components/Content'
+import style from './App.module.css'
 
-
-function App(props) {
-  // INPUT
-  // -- component arguments (props)
-  const { slot } = props
-  // -- internal state
-  const [count, setCount] = useState(8)
-
-  // OUTPUT
+function App() {
+  const [id, setId] = useState(null)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={style.wrapper}>
+      <div className={style.header}>
+        <Header id={id} />
       </div>
-
-
-      <h1>Vite + React + {slot}</h1>
-      
-      
-      <Counter count={count} setCount={setCount} />
-      <Counter count={count} setCount={setCount} />
-
-      <Counter2 />
-      <Counter2 />
-      
+      <div className={style.sidebar}>
+        <Sidebar id={id} setId={setId} />
+      </div>
+      <div className={style.content}>
+        <Content id={id} />
+      </div>
     </div>
   )
 }
